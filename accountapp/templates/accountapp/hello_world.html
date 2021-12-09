@@ -9,13 +9,32 @@
 </head>
 <body>
 
-    <!-- 식별 할 수 있도록 id 추가 -->
+    <input id="input_data" type="text">
+    <!-- 식별 할 수 있도록 id 추가 (post) -->
+    <!-- onclick 실행할 javascript 구문 생성 -->
+    <input value="제출" type="button" onclick="send_input()">
+
+    <!-- 식별 할 수 있도록 id 추가 (get) -->
     <h1 id="text">Hello World</h1>
 
 </body>
 
-<!-- axios github - Performing a GET request-->
 <script>
+    function send_input() {
+        <!-- axios github - Performing a POST request-->
+        axios.post('/accounts/hello_world/', {
+            firstName: 'Fred',
+          })
+          .then(function (response) {
+            console.log(response);
+          })
+          .catch(function (error) {
+            console.log(error);
+          });
+    }
+
+
+    <!-- axios github - Performing a GET request-->
     <!-- 서버 호출 -->
     axios.get('/accounts/hello_world/')
       .then(function (response) {
