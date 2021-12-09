@@ -14,4 +14,4 @@ def hello_world_template(request):
 # API Guide - Views - Function Based Views
 @api_view()
 def hello_world(request):
-    return Response({"message": "Hello World"})
+    return Response({"message": "Return Text"})
