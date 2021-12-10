@@ -25,4 +25,4 @@ urlpatterns = [
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 
 
-# settings - STATIC_URL - Serving static files during development (+ static)
+# settings - Static files (link) - Serving static files during development (+ static)
