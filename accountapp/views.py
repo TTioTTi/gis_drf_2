@@ -33,3 +33,7 @@ def hello_world(request):
     # 단일 객체가 아니기 때문에 many 설정
     serializer = NewModelSerializer(new_model_list, many=True)
     return Response(serializer.data)
+
+
+def AccountCreateTemplate(request):
+    return render(request, 'accountapp/create.html')
