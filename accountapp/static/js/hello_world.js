@@ -24,9 +24,10 @@ axios.get('/accounts/hello_world/')
     console.log(response);
 
     // 성공 했을 경우 어떤 javascript 작업을 할지
-    <!-- 이 문서 중에 text 를 id로 갖는(h1) 값을 views.py의 Return text로 바꾸겠다 -->
-    document.getElementById('text').innerHTML = response.data['message']; // Return text
-
+    for (let i=0; i < response.data.length; i++) {
+        document.getElementById('new_model_list').innerHTML += "<h5>" + response.data[i]['text'] + "</h5>"
+        document.getElementById('new_model_list').innerHTML += "<p>" + response.data[i]['created_at'] + "</p>"
+    }
   })
   .catch(function (error) {
     // handle error
