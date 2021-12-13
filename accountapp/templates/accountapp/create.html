@@ -1,15 +1,17 @@
 {% extends 'base.html' %}
+{% load static %}
 
 {% block content %}
 
     <div>
+        <!-- id -->
         <input type="text">
         <!-- password -->
-        <input type="text">
-        <!-- password confirm-->
-        <input type="text">
+        <input type="password">
 
-        <input type="submit" class="btn btn-dark rounded-pill px-5">
+        <input type="submit" class="btn btn-dark rounded-pill px-5" onclick="send_input()">
     </div>
+
+    <script src="{% static 'js/create.js' %}"></script>
 
 {% endblock %}

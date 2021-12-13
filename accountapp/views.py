@@ -42,7 +42,7 @@ def AccountCreateTemplate(request):
 
 
 # DRF - API Guide - Generic views (queryset=model/serializer_class=form_class/permission_classes=권한 설정)
-# postman - Body
+# DRF - API Guide - CreateAPIView (postman - Body - form_data)
 class AccountCreateAPIView(CreateAPIView):
     queryset = User.objects.all()
     serializer_class = UserSerializer
