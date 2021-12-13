@@ -1,4 +1,5 @@
 from django.urls import path
+from django.views.generic import TemplateView
 from rest_framework.authtoken import views
 
 from accountapp.views import hello_world, hello_world_template, AccountCreateTemplate, AccountCreateAPIView, \
@@ -16,6 +17,7 @@ urlpatterns = [
     # https://www.django-rest-framework.org/api-guide/authentication/#by-exposing-an-api-endpoint
     # By exposing an api endpoint
     path('login/', views.obtain_auth_token, name='login'),
+    path('logout_template/', TemplateView.as_view(template_name='accountapp/logout.html'), name='logout'),
 
     path('create_template/', AccountCreateTemplate, name='create_template'),
     path('create/', AccountCreateAPIView.as_view(), name='create'),
