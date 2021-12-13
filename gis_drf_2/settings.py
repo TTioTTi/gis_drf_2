@@ -55,8 +55,8 @@ INSTALLED_APPS = [
     'accountapp',
 ]
 
-# Authentication - Setting the authentication scheme
-# migrate 해주기
+# https://www.django-rest-framework.org/api-guide/authentication/#by-using-signals
+# Authentication - Setting the authentication scheme (migrate 해주기)
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': [
         'rest_framework.authentication.TokenAuthentication',
