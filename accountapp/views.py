@@ -51,6 +51,7 @@ class AccountCreateAPIView(CreateAPIView):
     permission_classes = []
 
 
+'''
 # https://www.django-rest-framework.org/api-guide/views/#class-based-views
 # Class-based Views - For example
 # postman - Headers - (Authorization/Token f1042e133de797dd2f49e89487f7453029f7b49c)
@@ -70,3 +71,8 @@ class ListUsers(APIView):
         """
         usernames = [user.username for user in User.objects.all()]
         return Response(usernames)
+'''
+
+
+def AccountLoginView(request):
+    return render(request, 'accountapp/login.html')
