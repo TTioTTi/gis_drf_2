@@ -20,10 +20,20 @@ function initialize(pk) {
 
 
 function update_account(pk) {
-    axios.patch('/accounts/update/' + pk, {
-        username: document.getElementById('username').value,
-        email: document.getElementById('email').value,
-    } )
+    // axios API
+    axios({
+        method: 'patch',
+        url: '/accounts/update/' + pk,
+        data: {
+            username: document.getElementById('username').value,
+            email: document.getElementById('email').value,
+        },
+        // postman 형식
+        // https://ko.javascript.info/cookie#ref-114 (setCookie)
+        headers: {
+            Authorization: decodeURIComponent(getCookie('drf_token')),
+        }
+    })
 
         .then(function (response) {
             // handle success
@@ -36,10 +46,10 @@ function update_account(pk) {
             // handle error
             console.log(error);
 
-            if (error.response.status == 401) {
+            if (error.response.status === 401) {
                 document.getElementById('alert_box').innerHTML
-                    = "<div class='btn btn-danger rounded-pill px-5'>인증정보가 없습니다.</div>"
-            } else if (error.response.status == 403) {
+                    = "<div class='btn btn-danger rounded-pill px-5'>인증 정보가 없습니다.</div>"
+            } else if (error.response.status === 403) {
                 document.getElementById('alert_box').innerHTML
                     = "<div class='btn btn-danger rounded-pill px-5'>권한이 없습니다.</div>"
             } else {
