@@ -2,6 +2,7 @@ from django.contrib.auth.models import User
 from django.shortcuts import render
 
 # Create your views here.
+from django.views.generic import TemplateView
 from rest_framework import authentication, permissions
 from rest_framework.authentication import TokenAuthentication
 from rest_framework.decorators import api_view
@@ -79,7 +80,12 @@ def AccountLoginView(request):
     return render(request, 'accountapp/login.html')
 
 
+class AccountRetrieveTemplateView(TemplateView):
+    template_name = 'accountapp/retrieve.html'
+
+
 # DRF - API Guide - Generic views - RetrieveAPIView
+# postman - Headers - http://127.0.0.1:8000/accounts/retrieve/4
 class AccountRetrieveAPIView(RetrieveAPIView):
     queryset = User.objects.all()
     serializer_class = UserWithoutPasswordSerializer
