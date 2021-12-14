@@ -116,6 +116,7 @@ class AccountDestroyTemplateView(TemplateView):
 #     authentication_classes = [TokenAuthentication]
 
 
+# https://www.django-rest-framework.org/api-guide/generic-views/#retrieveupdatedestroyapiview
 class AccountRUDAPIView(RetrieveUpdateDestroyAPIView):
     queryset = User.objects.all()
     serializer_class = UserWithoutPasswordSerializer
