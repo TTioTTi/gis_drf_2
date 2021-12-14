@@ -3,7 +3,7 @@ from django.views.generic import TemplateView
 from rest_framework.authtoken import views
 
 from accountapp.views import hello_world, hello_world_template, AccountCreateTemplate, AccountCreateAPIView, \
-    AccountLoginView, AccountRetrieveAPIView, AccountRetrieveTemplateView
+    AccountLoginView, AccountRetrieveAPIView, AccountRetrieveTemplateView, AccountUpdateAPIView
 
 app_name = 'accountapp'
 
@@ -25,5 +25,16 @@ urlpatterns = [
     path('retrieve_template/<int:pk>', AccountRetrieveTemplateView.as_view(), name='retrieve_template'),
     path('retrieve/<int:pk>', AccountRetrieveAPIView.as_view(), name='retrieve'),
 
+    path('update/<int:pk>', AccountUpdateAPIView.as_view(), name='update'),
+
     # path('list/', ListUsers.as_view(), name='list'),
 ]
+
+
+'''
+127.0.0.1:8000/accounts  + HTTP method + GET = LIST
+127.0.0.1:8000/accounts  + HTTP method + POST = Create
+127.0.0.1:8000/accounts/1  + HTTP method + GET = Detail
+127.0.0.1:8000/accounts/1  + HTTP method + PUT / PATCH  = Update
+127.0.0.1:8000/accounts/1  + HTTP method + DELETE = Delete
+'''
