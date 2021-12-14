@@ -35,7 +35,7 @@ function update_account(pk) {
             console.log(error);
 
             document.getElementById('alert_box').innerHTML
-                = "<div class='btn btn-danger rounded-pill px-5>업데이트에 실패했습니다.</div>"
+                = "<div class='btn btn-danger rounded-pill px-5'>업데이트에 실패했습니다.</div>"
         })
         .then(function () {
             // always executed
