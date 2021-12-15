@@ -45,4 +45,6 @@ RetrieveUpdateDestroyAPIView
 127.0.0.1:8000/accounts/1  + HTTP method + GET = Detail
 127.0.0.1:8000/accounts/1  + HTTP method + PUT / PATCH  = Update
 127.0.0.1:8000/accounts/1  + HTTP method + DELETE = Delete
+
+DB = https://www.heidisql.com/download.php
 '''

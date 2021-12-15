@@ -1,7 +1,8 @@
 //https://github.com/axios/axios
 
 function initialize(pk) {
-    axios.get('/accounts/retrieve/' + pk )
+    axios.get('/accounts/' + pk )
+
         .then(function (response) {
             // handle success
             console.log(response);
@@ -9,10 +10,12 @@ function initialize(pk) {
             document.getElementById('username').value = response.data['username'];
             document.getElementById('email').value = response.data['email'];
         })
+
         .catch(function (error) {
             // handle error
             console.log(error);
         })
+
         .then(function () {
             // always executed
         });
@@ -23,7 +26,7 @@ function update_account(pk) {
     // axios API
     axios({
         method: 'patch',
-        url: '/accounts/update/' + pk,
+        url: '/accounts/' + pk,
         data: {
             username: document.getElementById('username').value,
             email: document.getElementById('email').value,
