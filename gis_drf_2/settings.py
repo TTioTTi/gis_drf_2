@@ -53,6 +53,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'rest_framework.authtoken',
     'accountapp',
+    'profileapp',
 ]
 
 # https://www.django-rest-framework.org/api-guide/authentication/#by-using-signals
