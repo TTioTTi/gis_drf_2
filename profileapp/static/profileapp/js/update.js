@@ -1,6 +1,20 @@
 
+function getCookie(name) {
+  let matches = document.cookie.match(new RegExp(
+    "(?:^|; )" + name.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g, '\\$1') + "=([^;]*)"
+  ));
+  return matches ? decodeURIComponent(matches[1]) : undefined;
+}
+
+
 function initialize(pk) {
-    axios.get('/profiles/' + pk )
+    axios({
+        method: 'get',
+        url: '/profiles/' + pk,
+        headers: {
+            Authorization: decodeURIComponent(getCookie('drf_token'))
+        }
+    })
 
         .then(function (response) {
             // handle success
