@@ -30,7 +30,7 @@ var check = getCookie('drf_token');
 
 if (check !== undefined) {
     document.getElementById('signup_button').innerHTML =
-        "<a href=\"/accounts/retrieve_template/\" + pk>\n" +
+        "<a href=\"/accounts/retrieve_template/\">\n" +
         "MyPage\n" +
         "</a>";
     document.getElementById('login_button').innerHTML =
