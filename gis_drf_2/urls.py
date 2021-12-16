@@ -23,7 +23,8 @@ urlpatterns = [
 
     path('accounts/', include('accountapp.urls')),
     path('profiles/', include('profileapp.urls')),
-] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT) \
+  + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 
 # settings - Static files (link) - Serving static files during development (+ static)
