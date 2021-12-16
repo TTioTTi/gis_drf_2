@@ -42,7 +42,7 @@ function update_profile(pk) {
             console.log(response);
 
             // postman profile update 참조
-            window.location.href = '/accounts/retrieve_template/' + response.data['owner']['id'];
+            window.location.href = '/accounts/retrieve_template/' + response.data['owner_id'];
         })
 
         .catch(function (error) {
