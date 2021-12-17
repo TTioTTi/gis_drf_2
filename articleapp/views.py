@@ -16,6 +16,10 @@ class ArticleCreateTemplateView(TemplateView):
     template_name = 'articleapp/create.html'
 
 
+class ArticleMagicGridTemplateView(TemplateView):
+    template_name = 'articleapp/magic_grid.html'
+
+
 class ArticleCreateAPIView(CreateAPIView):
     queryset = Article.objects.all()
     serializer_class = ArticleSerializer
