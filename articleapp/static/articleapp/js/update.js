@@ -22,7 +22,6 @@ function initialize(pk) {
 
             document.getElementById('title').value = response.data['title'];
             document.getElementById('content').value = response.data['content'];
-
         })
 
         .catch(function (error) {
