@@ -7,3 +7,6 @@ app_name = 'articleapp'
 urlpatterns = [
     path('', ArticleCreateAPIView.as_view(), name='create'),
 ]
+
+
+# OperationalError = migrations
