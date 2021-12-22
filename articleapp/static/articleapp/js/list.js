@@ -10,7 +10,7 @@ function getCookie(name) {
 function initialize() {
     axios({
         method: 'get',
-        url: '/articles/list/',
+        url: '/articles/',
         headers: {
             Authorization: decodeURIComponent(getCookie('drf_token'))
         }
@@ -26,6 +26,31 @@ function initialize() {
                     "<a href=\"/articles/retrieve_template/" + response.data['results'][i]['id'] + "\">" +
                     "<img src=\"" + response.data['results'][i]['image'] + "\"" +
                     "style=\"width: 100%; border-radius: 1rem;\">" +
+                    "</a>";
+            }
+
+
+            var pagination = document.getElementById('pagination');
+
+            if (response.data['previous'] !== null) {
+                pagination.innerHTML +=
+                    "<a href=\"" + response.data['previous'] + "\"" +
+                    "class=\"btn btn-secondary rounded-pill px-5 mx-3\">" +
+                    " previous " +
+                    "</a>";
+            }
+
+            pagination.innerHTML +=
+                "<a href=\" # \"" +
+                "class=\"btn btn-dark rounded-pill px-5 mx-3\">" +
+                " current page " +
+                "</a>";
+
+            if (response.data['next'] !== null) {
+                pagination.innerHTML +=
+                    "<a href=\"" + response.data['previous'] + "\"" +
+                    "class=\"btn btn-secondary rounded-pill px-5 mx-3\">" +
+                    " next " +
                     "</a>";
             }
         })
