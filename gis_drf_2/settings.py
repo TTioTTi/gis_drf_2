@@ -55,6 +55,7 @@ INSTALLED_APPS = [
     'accountapp',
     'profileapp',
     'articleapp',
+    'drf_yasg',
 ]
 
 # https://www.django-rest-framework.org/api-guide/authentication/#by-using-signals

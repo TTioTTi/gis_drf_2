@@ -48,7 +48,7 @@ function initialize() {
 
             if (response.data['next'] !== null) {
                 pagination.innerHTML +=
-                    "<a href=\"" + response.data['previous'] + "\"" +
+                    "<a href=\"" + response.data['next'] + "\"" +
                     "class=\"btn btn-secondary rounded-pill px-5 mx-3\">" +
                     " next " +
                     "</a>";
